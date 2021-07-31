@@ -45,7 +45,7 @@
   "short_name": "SymBass",
   "orientation": "portrait",
   "display": "standalone",
-  "start_url": ".",
+  "start_url": "./public/index.html",
   "description": "An app that allows you to keep track of your spending.",
   "background_color": "#01579b",
   "theme_color": "#ffffff"

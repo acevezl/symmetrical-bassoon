@@ -14,6 +14,12 @@ const config = {
     filename: '[name].bundle.js',
     path: __dirname + '/public/dist'
   },
+  mode: 'development',
+  devServer: {
+    publicPath: '/',
+    contentBase: './public',
+    hot: true
+  },
   module: {
     rules: [
       {
@@ -27,7 +33,7 @@ const config = {
                 return '[path][name].[ext]';
               },
               publicPath(url) {
-                return url.replace('/', '/public');
+                return url.replace('../', '/public');
               }
             }
           },
@@ -50,6 +56,7 @@ const config = {
       name: "Symmetrical Bassoon",
       short_name: "SymBass",
       description: "An app that allows you to keep track of your spending.",
+      start_url: "./public/index.html",
       background_color: "#01579b",
       theme_color: "#ffffff",
       fingerprints: false,
@@ -60,8 +67,7 @@ const config = {
         destination: path.join("assets", "icons")
       }]
     })
-  ],
-  mode: 'development'
+  ]
 };
 
 module.exports = config;
