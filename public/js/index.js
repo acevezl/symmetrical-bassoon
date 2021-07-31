@@ -1,4 +1,4 @@
-import { saveTrx, storeTrxList } from './idb'
+import { saveTrx } from './idb'
 
 let transactions = [];
 let myChart;
