@@ -17,16 +17,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "file-loader": "^6.2.0",
     "image-webpack-loader": "^7.0.1",
     "webpack": "^5.47.1",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2",
-    "webpack-pwa-manifest": "^4.3.0"
-  },
-  "dependencies": {
+    "webpack-pwa-manifest": "^4.3.0",
     "@heroku-cli/plugin-buildpacks": "^7.54.0",
     "@heroku/buildpack-registry": "^1.0.1",
     "@popperjs/core": "^2.9.2",
