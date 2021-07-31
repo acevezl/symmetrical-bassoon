@@ -29,9 +29,11 @@
   "dependencies": {
     "@heroku-cli/plugin-buildpacks": "^7.54.0",
     "@heroku/buildpack-registry": "^1.0.1",
+    "@popperjs/core": "^2.9.2",
     "async-file": "^2.0.2",
     "bootstrap": "^4.3.1",
     "cli-ux": "^4.9.3",
+    "express": "^4.17.1",
     "got": "^8.3.2",
     "heroku": "^7.56.1",
     "jquery": "^3.6.0",
@@ -39,7 +41,6 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.12",
     "phoenix": "^1.5.9",
-    "yargs": "^13.3.2",
-    "@popperjs/core": "^2.9.2"
+    "yargs": "^13.3.2"
   }
 }
