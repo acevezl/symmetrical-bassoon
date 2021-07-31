@@ -103,6 +103,5 @@ function uploadTrx() {
 window.addEventListener('online', uploadTrx);   
 
 module.exports = {
-    saveTrx,
-    storeTrxList
+    saveTrx
 }

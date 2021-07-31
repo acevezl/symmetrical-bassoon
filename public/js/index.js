@@ -146,8 +146,12 @@ function sendTransaction(isAdding) {
     }
   })
   .catch(err => {
+
     // fetch failed, so save in indexed db
     saveTrx(transaction);
+
+    // store trx list in session Storage
+    sessionStorage.setItem('transactions', JSON.stringify(transactions));
 
     // clear form
     nameEl.value = "";
