@@ -33,6 +33,17 @@ request.onerror = function( event ) {
     console.log(event.target.errorCode);
 }
 
+//function to save all transactions locally
+function storeTrxList( trxList ) {
+    const transaction = db.transaction([`trx_list`], 'readwrite');
+
+    const trxObjectStore = transaction.objectStore(`trx_list`);
+
+    trxList.array.forEach( element => {
+        
+    });    
+}
+
 // function to call if we attempt to submit a new trx
 function saveTrx( trx ) {
     
@@ -98,4 +109,8 @@ function uploadTrx() {
 }
 
 // listen for app coming back online - when it comes back online, upload locally-stored trx
-window.addEventListener('online', uploadTrx);
+window.addEventListener('online', uploadTrx);   
+
+module.exports = {
+    saveTrx
+}

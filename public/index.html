@@ -40,11 +40,20 @@
     
     <canvas id="myChart"></canvas>
   </div>
-
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
-  <script src="js/index.js"></script>
-  <!-- Adding IDB for offline data persistence -->
-  <script src="js/idb.js"></script>
+  <script>
+    (function() {
+      if("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./service-worker.js")
+          .then(() => console.log("Service Worker registered successfully."))
+          .catch(error => console.log("Service Worker registration failed:", error));
+      }
+    })();
+    </script>
+
+    <!-- use webpack script instead of regular index.js -->
+    <script src="dist/app.bundle.js"></script>
+
 </body>
 </html>

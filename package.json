@@ -9,7 +9,7 @@
     "lite-server": "lite-server",
     "webpack": "webpack --watch",
     "build": "webpack",
-    "start:dev": "webpack-dev-server"
+    "start:dev": "webpack serve"
   },
   "keywords": [],
   "author": "",
@@ -25,7 +25,11 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.6.0",
+    "mongoose": "^5.13.3",
+    "mongosh": "^1.0.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.12",
     "popper.js": "^1.16.0"
   }
 }
