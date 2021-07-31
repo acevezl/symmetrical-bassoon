@@ -27,7 +27,7 @@ const config = {
                 return '[path][name].[ext]';
               },
               publicPath(url) {
-                return url.replace('../', '/public/');
+                return url.replace('/', '/public');
               }
             }
           },

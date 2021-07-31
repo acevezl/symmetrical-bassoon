@@ -1,4 +1,4 @@
-let idb;
+let db;
 
 // Establish connetion with local IndexedDB to store data locally when offline
 const request = indexedDB.open('symmetrical_bossoon', 1);
@@ -9,8 +9,9 @@ request.onupgradeneeded = function( event ) {
     // save ref to database
     const db = event.target.result;
 
-    // create an object store called new_trx + autoinc of sorts
+    // create an object store called `new_trx` to store trx users try to save offline
     db.createObjectStore('new_trx', { autoIncrement : true });
+
 }
 
 // event to emit upon successful database creation
@@ -19,6 +20,7 @@ request.onsuccess = function( event ) {
     // when database is successfully created with its object store (from upgradeneeded event above)
     // or simply established connection, save reference to database in global var
     db = event.target.result;
+   
 
     // check if app is online, if so - run uploadTrx() to send all local data to API
     if ( navigator.onLine ) {
@@ -31,17 +33,6 @@ request.onsuccess = function( event ) {
 request.onerror = function( event ) {
     // log into console
     console.log(event.target.errorCode);
-}
-
-//function to save all transactions locally
-function storeTrxList( trxList ) {
-    const transaction = db.transaction([`trx_list`], 'readwrite');
-
-    const trxObjectStore = transaction.objectStore(`trx_list`);
-
-    trxList.array.forEach( element => {
-        
-    });    
 }
 
 // function to call if we attempt to submit a new trx
@@ -112,5 +103,6 @@ function uploadTrx() {
 window.addEventListener('online', uploadTrx);   
 
 module.exports = {
-    saveTrx
+    saveTrx,
+    storeTrxList
 }

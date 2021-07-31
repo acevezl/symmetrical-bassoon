@@ -1,4 +1,4 @@
-import { saveTrx } from './idb'
+import { saveTrx, storeTrxList } from './idb'
 
 let transactions = [];
 let myChart;
@@ -10,14 +10,19 @@ fetch("/api/transaction")
   .then(data => {
     // save db data on global variable
     transactions = data;
-    storeTrxList(transactions);
-
     populateTotal();
     populateTable();
     populateChart();
+
+    sessionStorage.setItem('transactions', JSON.stringify(transactions));
   })
   .catch( err => {
-    retrieveTrxList();
+    transactions = JSON.parse(sessionStorage.getItem('transactions'));
+    
+    populateTotal();
+    populateTable();
+    populateChart();
+    
   });
 
 function populateTotal() {
