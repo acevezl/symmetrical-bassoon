@@ -11,6 +11,7 @@ SymmBass is a Node.js app that utilizes IndexedDB, ServiceWorker, and SessionSto
     - [Offline usage:](#offline-usage)
   - [Code](#code)
     - [Service Worker](#service-worker)
+      - [Web Manifest](#web-manifest)
     - [IndexedDB](#indexeddb)
   - [Session Storage](#session-storage)
   - [Questions](#questions)
@@ -181,6 +182,63 @@ self.addEventListener('fetch', function(event){
             })
         )
 });
+```
+
+#### Web Manifest
+This file controls the files to cache and minify. For this specific example, the gains are minor - however, on bigger projects the size savings are substantial.
+```
+{
+  "icons": [
+    {
+      "src": "auto/assets/icons/icon_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "auto/assets/icons/icon_384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "auto/assets/icons/icon_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "auto/assets/icons/icon_152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "auto/assets/icons/icon_144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "auto/assets/icons/icon_128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "auto/assets/icons/icon_96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "auto/assets/icons/icon_72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    }
+  ],
+  "name": "Symmetrical Bassoon",
+  "short_name": "SymBass",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "./public/index.html",
+  "description": "An app that allows you to keep track of your spending.",
+  "background_color": "#01579b",
+  "theme_color": "#ffffff"
+}
 ```
 
 ### IndexedDB
