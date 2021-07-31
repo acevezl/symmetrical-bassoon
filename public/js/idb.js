@@ -35,7 +35,7 @@ request.onerror = function( event ) {
     console.log(event.target.errorCode);
 }
 
-// function to call if we attempt to submit a new trx
+// function to call if we attempt to submit a new trx while offline
 function saveTrx( trx ) {
     
     // open new transaction with the database with read/write permish
