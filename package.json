@@ -30,6 +30,7 @@
     "@heroku-cli/plugin-buildpacks": "^7.54.0",
     "@heroku/buildpack-registry": "^1.0.1",
     "@popperjs/core": "^2.9.2",
+    "@types/compression": "^1.7.1",
     "async-file": "^2.0.2",
     "bootstrap": "^4.3.1",
     "cli-ux": "^4.9.3",
