@@ -1,38 +1,38 @@
 {
-  "name": "budget-app",
+  "name": "Symmetrical Basoon",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "lite-server": "lite-server",
     "webpack": "webpack --watch",
     "build": "webpack",
-    "start:dev": "webpack-dev-server"
+    "start:dev": "webpack serve"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@webpack-cli/serve": "^1.5.1",
     "file-loader": "^6.2.0",
     "image-webpack-loader": "^6.0.0",
     "webpack": "^4.32.2",
     "webpack-bundle-analyzer": "^3.6.0",
-    "webpack-cli": "^3.3.2",
+    "webpack-cli": "^4.1.1",
     "webpack-dev-server": "^3.11.2",
     "webpack-pwa-manifest": "^4.3.0"
   },
   "dependencies": {
-    "@heroku/buildpack-registry": "^1.0.1",
     "async-file": "^2.0.2",
     "bootstrap": "^4.3.1",
-    "cli-ux": "^4.9.3",
-    "got": "^7.1.0",
     "heroku": "^7.56.1",
     "jquery": "^3.6.0",
     "mongoose": "^5.13.3",
-    "mongosh": "^1.0.1",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.12",
     "phoenix": "^1.5.9",
